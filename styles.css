@@ -1,0 +1,495 @@
+/* CSS RESET */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+
+:root {
+    /* Theme 1 */
+
+    --clr-theme1__background-main: hsl(222, 26%, 31%);
+    --clr-theme1__background-toggle-keypad: hsl(223, 31%, 20%);
+    --clr-theme1__background-screen: hsl(224, 36%, 15%);
+
+    --clr-theme1__keys2-background: hsl(225, 21%, 49%);
+    --clr-theme1__keys2-shadow: hsl(224, 28%, 35%);
+    --clr-theme1__keys-toggle: hsl(6, 63%, 50%);
+    --clr-theme1__keys-toggle-shadow: hsl(6, 70%, 34%);
+
+    --clr-theme1__keys1-background: hsl(30, 25%, 89%);
+    --clr-theme1__keys1-shadow: hsl(28, 16%, 65%);
+
+    --clr-theme1__text-dark: hsl(221, 14%, 31%);
+    --clr-theme1__text-light: hsl(0, 0%, 100%);
+
+    /* Theme 2 */
+    --clr-theme2__background-main: hsl(0, 0%, 90%);
+    --clr-theme2__background-toggle-keypad: hsl(0, 5%, 81%);
+    --clr-theme2__background-screen: hsl(0, 0%, 93%);
+
+    --clr-theme2__keys2-background: hsl(185, 42%, 37%);
+    --clr-theme2__keys2-shadow: hsl(185, 58%, 25%);
+
+    --clr-theme2__keys-toggle: hsl(25, 98%, 40%);
+    --clr-theme2__keys-toggle-shadow: hsl(25, 99%, 27%);
+
+    --clr-theme2__keys1-background: hsl(45, 7%, 89%);
+    --clr-theme2__keys1-shadow: hsl(35, 11%, 61%);
+
+    --clr-theme2__text-dark: hsl(60, 10%, 19%);
+    --clr-theme2__text-light: hsl(0, 0%, 100%);
+
+    /* Theme 3 */
+    --clr-theme3__background-main: hsl(268, 75%, 9%);
+    --clr-theme3__background-toggle-keypad: hsl(268, 71%, 12%);
+    --clr-theme3__background-screen: hsl(268, 71%, 12%);
+
+    --clr-theme3__keys2-background: hsl(281, 89%, 26%);
+    --clr-theme3__keys2-shadow: hsl(285, 91%, 52%);
+
+    --clr-theme3__keys-toggle: hsl(176, 100%, 44%);
+    --clr-theme3__keys-toggle-shadow: hsl(177, 92%, 70%);
+
+    --clr-theme3__keys1-background: hsl(268, 47%, 21%);
+    --clr-theme3__keys1-shadow: hsl(290, 70%, 36%);
+
+    --clr-theme3__text-yellow: hsl(52, 100%, 62%);
+    --clr-theme3__text-dark: hsl(198, 20%, 13%);
+    --clr-theme3__text-light: hsl(0, 0%, 100%);
+
+    --ff-primary: 'League Spartan', sans-serif;
+    --fw-700: 700;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    max-width: 35rem;
+    justify-content: center;
+    font-size: 2rem;
+    font-family: var(--ff-primary);
+
+
+}
+
+
+header {
+
+    margin-left: 1rem;
+
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+input {
+
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    border-radius: 50%;
+    appearance: none;
+
+    opacity: 0;
+}
+
+
+.toggle-button.init {
+    opacity: 1;
+}
+
+.calculator__title {
+    margin-top: 1rem;
+    font-size: 90%;
+}
+
+.theme-selector {
+    align-items: center;
+    margin-top: 0.25rem;
+    /* margin-bottom: 1rem; */
+}
+
+.theme-selector__caption {
+    font-size: 40%;
+    letter-spacing: 0.1rem;
+    margin-top: 1.6rem;
+    margin-right: 1.5rem;
+    /* margin-bottom: 1rem; */
+}
+
+.theme-selector__toggles {
+    display: flex;
+    border: 3px solid transparent;
+    border-radius: 50px;
+}
+
+.toggle-button {
+
+    background-color: black;
+
+}
+
+.toggle-button:hover{
+    cursor: pointer;
+}
+
+.theme-selector__labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 40%;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+}
+
+
+
+.grid-container {
+    display: grid;
+    gap: 1rem;
+    /* gap: 5%; */
+
+}
+
+.calculator__display-container {
+    text-align: right;
+    height: 5rem;
+
+
+    margin: 1.5rem 0 1rem 0;
+    border-radius: 0.5rem;
+}
+
+
+
+.calculator__keypad {
+
+    padding: 1.25rem;
+
+    border-radius: 0.5rem;
+
+}
+
+.calculator-button {
+
+    border-radius: 0.4rem;
+    border-style: none;
+}
+
+button#del {
+    font-size: 70%;
+}
+button#reset {
+    font-size: 60%;
+}
+button#equals {
+    font-size: 70%;
+}
+
+/* Theme 1 */
+
+body[data-toggle-position="1"]{
+    background-color: var(--clr-theme1__background-main);
+}
+
+body[data-toggle-position="2"] {
+
+    background-color: var(--clr-theme2__background-main);
+}
+
+body[data-toggle-position="3"]{
+    background-color: var(--clr-theme3__background-main);
+
+}
+
+
+
+.calculator__title[data-toggle-position="1"] {
+    color: var(--clr-theme1__text-light);
+}
+.calculator__title[data-toggle-position="2"] {
+    color: var(--clr-theme2__text-dark);
+}
+.calculator__title[data-toggle-position="3"] {
+    color: var(--clr-theme3__text-yellow);
+}
+
+.theme-selector__caption[data-toggle-position="1"]{
+
+    color: var(--clr-theme1__text-light);
+}
+.theme-selector__caption[data-toggle-position="2"] {
+    color: var(--clr-theme2__text-dark);
+}
+.theme-selector__caption[data-toggle-position="3"] {
+    color: var(--clr-theme3__text-yellow);
+}
+
+.theme-selector__labels[data-toggle-position="1"] {
+    color: var(--clr-theme1__text-light);
+}
+.theme-selector__labels[data-toggle-position="2"] {
+    color: var(--clr-theme2__text-dark);
+}
+.theme-selector__labels[data-toggle-position="3"] {
+    color: var(--clr-theme3__text-yellow);
+}
+
+.theme-selector__toggles[data-toggle-position="1"] {
+    background-color: var(--clr-theme1__background-toggle-keypad);
+}
+
+.theme-selector__toggles[data-toggle-position="2"] {
+    background-color: var(--clr-theme2__background-toggle-keypad);
+
+}
+
+.theme-selector__toggles[data-toggle-position="3"] {
+    background-color: var(--clr-theme3__background-toggle-keypad);
+
+}
+
+
+.toggle-button[data-toggle-position="1"] {
+    background-color: var(--clr-theme1__keys-toggle);
+}
+
+.toggle-button[data-toggle-position="2"] {
+    background-color: var(--clr-theme2__keys-toggle);
+}
+
+.toggle-button[data-toggle-position="3"] {
+    background-color: var(--clr-theme3__keys-toggle);
+}
+
+
+.calculator__display-container[data-toggle-position="1"] {
+    background-color: var(--clr-theme1__background-screen);
+    color: var(--clr-theme1__text-light);
+}
+.calculator__display-container[data-toggle-position="2"] {
+    background-color: var(--clr-theme2__background-screen);
+    color: var(--clr-theme2__text-dark);
+}
+.calculator__display-container[data-toggle-position="3"] {
+    background-color: var(--clr-theme3__background-screen);
+    color: var(--clr-theme3__text-yellow);
+}
+
+
+
+
+.calculator__keypad[data-toggle-position="1"] {
+    background-color: var(--clr-theme1__background-toggle-keypad);
+}
+
+.calculator__keypad[data-toggle-position="2"] {
+    background-color: var(--clr-theme2__background-toggle-keypad);
+}
+
+.calculator__keypad[data-toggle-position="3"] {
+    background-color: var(--clr-theme3__background-toggle-keypad);
+}
+
+
+
+.calculator-button[data-toggle-position="1"] {
+    background-color: var(--clr-theme1__keys1-background);
+    box-shadow: 0px 4px var(--clr-theme1__keys1-shadow);
+    color: var(--clr-theme1__text-dark);
+}
+.calculator-button[data-toggle-position="2"] {
+
+    background-color: var(--clr-theme2__keys1-background);
+    box-shadow: 0px 4px var(--clr-theme2__keys1-shadow);
+    color: var(--clr-theme2__text-dark);
+}
+.calculator-button[data-toggle-position="3"] {
+
+    background-color: var(--clr-theme3__keys1-background);
+    box-shadow: 0px 4px var(--clr-theme3__keys1-shadow);
+    color: var(--clr-theme3__text-yellow);
+}
+
+
+.button-reset-del[data-toggle-position="1"] {
+    background-color: var(--clr-theme1__keys2-background);
+    box-shadow: 0 4px var(--clr-theme1__keys2-shadow);
+    color: var(--clr-theme1__text-light);
+}
+.button-reset-del[data-toggle-position="2"] {
+    background-color: var(--clr-theme2__keys2-background);
+    box-shadow: 0 4px var(--clr-theme2__keys2-shadow);
+    color: var(--clr-theme1__text-light);
+}
+.button-reset-del[data-toggle-position="3"] {
+    background-color: var(--clr-theme3__keys2-background);
+    box-shadow: 0 4px var(--clr-theme3__keys2-shadow);
+    color: var(--clr-theme1__text-light);
+}
+
+
+button#equals[data-toggle-position="1"] {
+    background-color: var(--clr-theme1__keys-toggle);
+    box-shadow:0 4px var(--clr-theme1__keys-toggle-shadow);
+    color: var(--clr-theme1__text-light);
+}
+button#equals[data-toggle-position="2"] {
+    background-color: var(--clr-theme2__keys-toggle);
+    box-shadow:0 4px var(--clr-theme2__keys-toggle-shadow);
+    color: var(--clr-theme2__text-light);
+}
+button#equals[data-toggle-position="3"] {
+    background-color: var(--clr-theme3__keys-toggle);
+    box-shadow:0 4px var(--clr-theme3__keys-toggle-shadow);
+    color: var(--clr-theme3__text-dark);
+}
+
+
+.grid-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-left: 2.5%;
+
+    gap: 2%;
+}
+
+.grid-row > button {
+    height: 3.5rem;
+    /* line-height: 3.5rem; */
+    /* height: 100%; */
+    /* width: 3.75rem; */
+    width: 90%;
+
+}
+
+
+.grid-row > button:hover {
+    cursor: pointer;
+}
+
+.grid-row > button:active {
+
+    filter: brightness(1.5);
+
+}
+.grid-row__bottom {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-row__bottom > button {
+    /* width: 9rem; */
+    width: 95%;
+}
+
+.input-display {
+
+
+    font-size: 120%;
+    padding-top: 1rem;
+    padding-right: 1rem;
+
+}
+
+@media (width < 40em) {
+    .grid-row > button {
+        line-height: 3.75rem;
+    }
+}
+
+@media ( width > 40em) {
+    .calculator__display-container {
+        height: 8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .grid-container {
+        gap: 1.5rem;
+    }
+    .input-display {
+        font-size: 170%;
+        padding-top: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .grid-row > button {
+        /* width: 85%; */
+        padding-top: 0.5rem;
+    }
+}
+
+
+footer.attribution {
+    color:hsl(25, 98%, 40%);
+    font-size: 40%;
+    text-align: center;
+}
+
+footer.attribution>a{
+    color:hsl(28, 16%, 65%);
+}

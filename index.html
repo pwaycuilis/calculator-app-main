@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Calculator app</title>
+  <!-- Google fonts -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap" rel="stylesheet">  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet"> 
+
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="script.js" defer></script>
+
+</head>
+<body id="body" data-toggle-position="1">
+  <header class="flex flex-row">
+    <h1 class="calculator__title" data-toggle-position="1">calc</h1>
+
+    <div class="theme-selector flex flex-row">
+      
+      <span class="theme-selector__caption" data-toggle-position="1">THEME</span>
+
+      <div class="theme-selector">
+
+        <div class="theme-selector__labels" data-toggle-position="1">
+          <label class="toggle-label-1" for="theme-toggle-1" >1</label>
+          <label class="toggle-label-2" for="theme-toggle-2">2</label>
+          <label class="toggle-label-3" for="theme-toggle-3">3</label>
+        </div>
+
+        <div id="theme-selector__toggles" class="theme-selector__toggles" data-toggle-position="1">
+          <input type="radio" id="theme-toggle-1" class="toggle-button init" data-toggle-position="1" aria-controls="theme-selector__toggles body calculator__keypad">
+          <input type="radio" id="theme-toggle-2" class="toggle-button" data-toggle-position="1" aria-controls="theme-selector__toggles body calculator__keypad calculator-button">
+          <input type="radio" id="theme-toggle-3" class="toggle-button" data-toggle-position="1" aria-controls="theme-selector__toggles body calculator__keypad">
+        </div>
+        
+      </div>
+
+      
+
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- <div class="calculator__display"> -->
+      <div class="calculator__display-container" data-toggle-position="1">
+        <div class="input-display">
+          <!-- display input here -->
+        </div>
+      </div>
+      <!-- <div class="calculator__display-text flex flex-column">0</div> -->
+    <!-- </div> -->
+
+    <div class="calculator__keypad grid-container" data-toggle-position="1">
+      <div class="row-1 grid-row">
+        <button class="calculator-button" id="seven" data-toggle-position="1">7</button>
+        <button class="calculator-button" id="eight" data-toggle-position="1">8</button>
+        <button class="calculator-button" id="nine" data-toggle-position="1">9</button>
+        <button class="calculator-button button-reset-del" id="del" data-toggle-position="1">DEL</button>
+      </div>
+
+      <div class="grid-row">
+        <button class="calculator-button" id="four" data-toggle-position="1">4</button>
+        <button class="calculator-button" id="five" data-toggle-position="1">5</button>
+        <button class="calculator-button" id="six" data-toggle-position="1">6</button>
+        <button class="calculator-button" id="plus" data-toggle-position="1">+</button>
+      </div>
+
+      <div class="grid-row">
+        <button class="calculator-button" id="one" data-toggle-position="1">1</button>
+        <button class="calculator-button" id="two" data-toggle-position="1">2</button>
+        <button class="calculator-button" id="three" data-toggle-position="1">3</button>
+        <button class="calculator-button" id="-" data-toggle-position="1">-</button>
+      </div>
+
+      <div class="grid-row">
+        <button class="calculator-button" id="decimal" data-toggle-position="1">.</button>
+        <button class="calculator-button" id="zero" data-toggle-position="1">0</button>
+        <button class="calculator-button" id="divide" data-toggle-position="1">/</button>
+        <button class="calculator-button" id="multiply" data-toggle-position="1">x</button>
+      </div>
+
+      <div class="grid-row grid-row__bottom">
+        <button class="calculator-button button-reset-del" id="reset" data-toggle-position="1">RESET</button>
+        <button class="calculator-button" id="equals" data-toggle-position="1">=</button>
+      </div>
+  </div>
+  </main>
+
+
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io/profile/pwaycuilis" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Paul Waycuilis</a>.
+  </footer>
+</body>
+</html>
