@@ -61,6 +61,7 @@ const eight = document.querySelector('#eight');
 const nine = document.querySelector('#nine');
 
 const plus = document.querySelector('#plus');
+const minus = document.querySelector('#minus');
 const multiply = document.querySelector('#multiply');
 const divide = document.querySelector('#divide');
 const equals = document.querySelector('#equals');
@@ -108,9 +109,7 @@ const appendOperator = (operator) => {
 
     if (operatorSet.has(lastInput)) {
         expressionString = expressionString.substring(0, expressionString.length-1);
-        // expressionString.pop();
-        // expressionString += operator;
-        // lastInput = ''
+
         expressionString += operator;
         lastInput = operator;
     } else {
@@ -122,17 +121,11 @@ const appendOperator = (operator) => {
 
 const appendDisplay = (num) => {
 
-
-
-
     if (currentDisplay === '0' || operatorSet.has(lastInput)) {
         // console.log('lastInput: ' + lastInput + ' resetting display');
         currentDisplay = '';
         currentNumDisplay = '';
     }
-
-
-    
 
     expressionString += num;
     currentNumDisplay += num;
@@ -158,12 +151,7 @@ zero.addEventListener('click', () => {
 })
 
 one.addEventListener('click', () => {
-
-    // console.log(parseInt('3+2'));
-    // console.log('one');
-    
     appendDisplay('1');
-
 })
 
 two.addEventListener('click', () => {
@@ -197,6 +185,9 @@ decimal.addEventListener('click', () => {
 
 plus.addEventListener('click', () => {
     appendOperator('+');
+})
+minus.addEventListener('click', () => {
+    appendOperator('-');
 })
 multiply.addEventListener('click', () => {
     appendOperator('*');
